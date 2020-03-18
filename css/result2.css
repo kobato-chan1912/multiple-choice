@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina+2&display=swap');
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+}
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+}
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 250px;
+    background:url("../images/bgm.png");
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: 15pt;
+}
+th{
+    font-family: segoe ui light;
+
+}
+td{
+    color: blue;
+}
+.play{
+    margin-top: 40px;
+}
+.router{
+    margin-top: 50px;
+    animation-delay: 0.5s;
+}
+i {
+    margin-right: 20px;
+    color: inherit;
+}
+.inherit{
+    color: inherit;
+}
+
+

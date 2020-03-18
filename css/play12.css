@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina+2&display=swap');
+body{
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: 15pt;
+}
+.alert {
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .50rem;
+    width: 900px;
+}
+label{
+    padding-left: 20px;
+}
+#result-out{
+    padding-top: 40px;
+}
+#quiz-name {
+    padding-top: 40px;
+}
+.button-div{
+    padding-top: 10px;
+    padding-bottom:30px;
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    display: inline-block;
+}
+i {
+    margin-right: 20px;
+    color: inherit;
+}
+.inherit{
+    color: inherit;
+}
+.navbar{
+    width: 400px;
+}

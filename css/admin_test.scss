@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina+2&display=swap');
+
+
+
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-login100 {
+  width: 100%;
+  min-height: 100vh;
+  padding: 250px;
+  background:url("../images/bgm.png");
+  font-family: 'Baloo Bhaina 2', cursive;
+  font-size: 15pt;
+}
+.play{
+  margin-top: 50px;
+}
+.router{
+  margin-top: 50px;
+  animation-delay: 0.5s;
+}
+i {
+  margin-right: 20px;
+  color: inherit;
+}
+.inherit{
+  color: inherit;
+}
+
+
+
+$text: #fff;
+$link: #e34234;
+$link-hover: #ba160c;
+$background: #00356B;
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: $background
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%,-50%);
+  color: $text;
+  max-width: 90%;
+  padding: 2em 3em;
+  background: rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 0px 2px #131415;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 2.25em;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+a,
+a:visited {
+  color: $link;
+  transition: 0.25s;
+}
+
+a:hover,
+a:focus {
+  color: $link-hover;
+}
