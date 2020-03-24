@@ -1,2 +1,2 @@
 <?php
-header("Location: /Quiz-Demo/public");
+header("Location: /public");
