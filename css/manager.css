@@ -1,0 +1,11 @@
+input{
+    width: 1200px;
+    margin-left: 300px;
+    padding-left: 30px;
+    display: table-cell;
+
+}
+#detail{
+    height: 300px;
+    width: 300px;
+}

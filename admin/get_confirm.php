@@ -12,39 +12,40 @@ use PHPMailer\PHPMailer\SMTP;
 
 $router = new Apps_Libs_Router();
 $users = new Apps_Models_users();
-$id =   $router->getPOST("id");
+$id = $router->getPOST("id");
 $OTP = decrypt($router->getPOST('OTP'), $private_secret_key);
 $status = 0;
 
 
+if (($router->getPOST('OTP_submit')) == $OTP) {
+    if ($router->getPOST('pass') == $router->getPOST('retype')) {
+        $params = [
+            ":password" => md5($router->getPOST("pass"))
+        ];
+        // call the first id in params.
+        $params [":id"] = $id;
+        $query = $users->buildQueryParams([
 
-    if(($router->getPOST('OTP_submit'))==$OTP){
-        if($router->getPOST('pass')==$router->getPOST('retype')){
-            $params = [
-                ":password" => md5($router->getPOST("pass"))
-            ];
-            $params [":id"] = $id;
-            $query = $users->buildQueryParams([
-                    "value" => "password=:password",
-                    "where" => "id=:id",
-                    "params" => $params
-            ])->update();
+                // can't get id here.
 
-            if ($query){
-                $status = 1;
+            "value" => "password=:password",
+            "where" => "id=:id",
+            "params" => $params
+        ])->update();
 
-                echo "Pass đã đổi thành công. Về trang chủ trong 3 giây sau.";
+        if ($query) {
+            $status = 1;
 
-            }
+            echo "Pass đã đổi thành công. Về trang chủ trong 3 giây sau.";
+
         }
-        else{
-            $status=2; //Wrong pass
-        }
+    } else {
+        $status = 2; //Wrong pass
+    }
 
-    }
-    else{
-        $status=3; //wrong OTP
-    }
+} else {
+    $status = 3; //wrong OTP
+}
 
 $json_status = json_encode($status);
 
@@ -54,15 +55,19 @@ $json_status = json_encode($status);
 <script>
     var status = <?php echo $json_status ?>;
     var x = document.getElementById('result');
-    if (status==1){
-        setTimeout(function(){
+    if (status == 1) {
+
+        // setTimeOut function the password has been changed.
+        // redirect to login page.
+
+        setTimeout(function () {
             window.location.href = "http://192.168.64.2/Quiz-Demo/admin/index.php?r=login";
         }, 3000);
     }
-    if (status==2){
+    if (status == 2) {
         x.innerHTML = "Mật khẩu không trùng khớp";
     }
-    if (status==3) {
+    if (status == 3) {
         x.innerHTML = "Mã OTP không chính xác";
     }
 

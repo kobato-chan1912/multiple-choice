@@ -106,6 +106,29 @@ if ($router->getPOST("submit") && $router->getPOST("name")) {
 ?>
 
 <html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../css/util.css">
+    <link rel="stylesheet" type="text/css" href="../css/manager.css">
+    <link rel="stylesheet" type="text/css" href="../css/particular.css">
+    <!--===============================================================================================-->
+</head>
+<body>
 <h1>Questions Managers</h1>
 <div>
     Welcome, <?php echo $user->Get_Session_Name("username") ?>. <a href="<?= $router->createUrl("logout") ?>">Logout</a>
@@ -143,12 +166,12 @@ if ($router->getPOST("submit") && $router->getPOST("name")) {
     <?php  } ?>
     <?php if (!$router->getGET("id")){ ?>
         Câu hỏi: <input type="text" name="name" value=""></div>
-        <div>Đáp án A: <input type="text" name="A_ans" value=""></div>
+        <div>Đáp án A: <input type="text" name="A_ans"  value=""></div>
         <div>Đáp án B: <input type="text" name="B_ans" value=""></div>
         <div>Đáp án C: <input type="text" name="C_ans" value=""></div>
         <div>Đáp án D: <input type="text" name="D_ans" value=""></div>
         <div>Đáp án: <input type="text" name="answer" value=""></div>
-        <div>Giải thích đáp án: <input type="text" name="Detail" value=""></div>
+        <div>Giải thích đáp án: <input type="text" id="detail" name="Detail" value=""></div>
 
         <select name="pack">
             <?php foreach ($GET_Select2 as $row) { ?>
@@ -167,5 +190,6 @@ if ($router->getPOST("submit") && $router->getPOST("name")) {
         <?php  } ?>
 
 </form>
+</body>
 </html>
 

@@ -25,7 +25,7 @@ $query2 = $users->buildQueryParams([
 $email = $query2[0]["email"];
 
 
-function generateRandomString($length = 6) {
+function generateRandomString($length = 6) { //Generating an random number with length = 6.
     return substr(str_shuffle(str_repeat($x='1234567890', ceil($length/strlen($x)) )),1,$length);
 }
 
@@ -66,32 +66,7 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
-//if ($router->getPOST("submit")) {
-//    if(($router->getPOST('OTP'))==$OTP){
-//        if($router->getPOST('pass')==$router->getPOST('retype')){
-//            $params = [
-//                ":password" => md5($router->getPOST("pass"))
-//            ];
-//            $params [":id"] = $id;
-//            $query = $users->buildQueryParams([
-//                    "value" => "password=:password",
-//                    "where" => "id=:id",
-//                    "params" => $params
-//            ])->update();
-//            if ($query){
-//                echo "Pass đã đổi thành công. Về trang chủ trong 3 giây sau.";
-//                header( "refresh:3;url=index.php" );
-//            }
-//        }
-//        else{
-//            echo "Pass không trùng";
-//        }
-//
-//    }
-//    else{
-//        echo "Sai mã OTP.";
-//    }
-//}
+
 ?>
 
 <!DOCTYPE html>

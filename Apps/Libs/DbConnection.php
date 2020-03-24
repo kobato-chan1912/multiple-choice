@@ -6,12 +6,12 @@ class Apps_Libs_DbConnection{
     protected $host = "localhost";
     protected $database = "Quiz_Game";
     protected $tableName;
-    protected $queryParams = []; //mảng lưu query dạng "" => "".
-    protected static $connectionInstance = null; //Biến kiểm tra trạng thái kết nối.
+    protected $queryParams = []; //Query saves as params = []
+    protected static $connectionInstance = null; //check connection status.
 
     public function __construct()
     {
-        $this->connect(); //Khi thằng kết nối vừa tạo thì kết nối database luôn.
+        $this->connect(); //connect database when get a connect object.
     }
 
     public function BuildCondition ($condition){
