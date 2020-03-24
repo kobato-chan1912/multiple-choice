@@ -1,10 +1,14 @@
 <?php
 
 class Apps_Libs_DbConnection{
-    protected $username = "root";
-    protected $password = "";
-    protected $host = "localhost";
-    protected $database = "Quiz_Game";
+
+
+    //Use your Database login account/.
+
+    protected $username = "befb80d4516638"; //
+    protected $password = "09a53c59";
+    protected $host = "us-cdbr-iron-east-01.cleardb.net";
+    protected $database = "heroku_51a66941bdb0c80"; // use your database account.
     protected $tableName;
     protected $queryParams = []; //Query saves as params = []
     protected static $connectionInstance = null; //check connection status.
